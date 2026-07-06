@@ -1,0 +1,8 @@
+UPS (Uninterruptible Power Supply / 무정전 전원 공급 장치)
+PDU (Power Distribution Unit / 전력 분배 장치)
+ATS (Automatic Transfer Switch / 자동 전환 스위치)
+CRAC / CRAH (Computer Room Air Conditioner / Air Handler)
+CACS / HACS (Cold/Hot Aisle Containment System / 통로 차단 시스템)
+DCIM (Data Center Infrastructure Management / 데이터센터 인프라 관리)
+BMS (Building Management System / 빌딩 관리 시스템)
+RU / U (Rack Unit / 랙 유닛)

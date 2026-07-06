@@ -1,0 +1,876 @@
+1. 실습명
+
+GitHub, Git, VS Code, Python 설치 상태 확인 및 Notion 인증자료 제출하기
+
+이번 실습에서는 앞으로 진행할 로컬 파일 자동화, Python 교육용 샘플 로그 분석, GitHub 포트폴리오 정리를 위해 개인 노트북의 기본 실습환경을 확인합니다.
+
+오늘은 코드를 많이 작성하는 시간이 아닙니다.
+핵심은 아래 도구들이 내 노트북에서 실행 가능한지 확인하고, 확인 결과를 Notion에 인증자료로 정리하는 것입니다.
+
+강의자 Notion
+GitHub
+Git
+VS Code
+Python
+Node.js/npm
+로컬 실습 폴더
+GitHub 저장소
+2. 실습 목표
+구분	목표
+환경 확인	GitHub, Git, VS Code, Python 설치 또는 접속 상태를 확인할 수 있습니다.
+명령어 실행	git --version, python --version, node --version, npm --version 같은 기본 확인 명령을 실행할 수 있습니다.
+로컬 폴더 준비	AWS-DCO-GenAI-Portfolio 실습 폴더와 04_environment_setup 폴더를 만들 수 있습니다.
+인증자료 작성	설치 확인 화면 또는 오류 화면을 캡처하고 Notion 하부 페이지에 정리할 수 있습니다.
+오류 대응	설치가 안 된 경우 오류 해결 로그를 작성하고 대체 제출할 수 있습니다.
+포트폴리오 연결	이후 GitHub 포트폴리오의 04_environment_setup/install_check.md 파일로 정리할 내용을 준비할 수 있습니다.
+3. 예상 소요 시간
+
+총 50분입니다.
+
+시간	활동
+0~5분	오늘의 목표와 제출 방식 확인
+5~10분	Notion 제출 페이지 만들기
+10~15분	GitHub 로그인 및 저장소 준비
+15~23분	Git 설치 확인
+23~30분	VS Code 설치 확인
+30~37분	Python 설치 확인
+37~41분	Node.js/npm 설치 여부 확인
+41~45분	로컬 실습 폴더 생성
+45~48분	Notion 인증자료 정리
+48~50분	지필시험 연결 포인트와 체크리스트 확인
+
+설치가 오래 걸리거나 오류가 발생한 학생은 모든 설치를 50분 안에 끝내지 않아도 됩니다. 오류 화면 캡처와 오류 해결 로그도 5차시 산출물로 인정합니다.
+
+5. 준비물
+준비물	사용 목적
+개인 노트북	로컬 실습환경 확인
+웹 브라우저	Notion, GitHub, 공식 다운로드 페이지 접속
+강의자 Notion 접속 권한	실습자료 확인 및 인증자료 제출
+GitHub 계정	포트폴리오 저장소 준비
+Windows PowerShell 또는 macOS/Linux Terminal	설치 확인 명령 실행
+VS Code	파일 편집과 이후 Python 실행
+Python	이후 교육용 샘플 로그 분석
+Git	버전관리와 GitHub 업로드
+Node.js/npm	Antigravity CLI 등 도구 설치 보조 확인용
+
+VS Code는 공식 문서 기준 Windows, macOS, Linux에서 사용할 수 있는 코드 편집기이며, Windows에서는 User setup 설치가 일반 학생에게 적합합니다. 설치 후 터미널을 다시 열면 code . 명령으로 폴더를 열 수 있습니다. macOS에서는 .dmg 파일 설치 후 Applications 폴더로 옮기고, 필요하면 Command Palette에서 Shell Command: Install 'code' command in PATH를 실행해 code 명령을 사용할 수 있습니다.
+
+7. 실습 인프라 구성 이유
+
+5차시는 이후 실습을 위한 개발 및 협업 환경 준비 차시입니다.
+
+DCO 직무 이해 과정에서 Git, GitHub, VS Code, Python을 사용하는 이유는 실제 장비를 조작하기 위해서가 아닙니다.
+이 수업에서는 다음과 같은 학습 활동을 위해 도구를 사용합니다.
+
+도구	이 수업에서의 역할
+Notion	실습 안내 확인, 산출물 제출, 오류 해결 로그 기록
+GitHub	학습형 포트폴리오 저장소 정리
+Git	파일 변경 이력 관리와 GitHub 업로드 준비
+VS Code	로컬 파일 편집, Markdown 작성, Python 실행
+Python	교육용 샘플 로그 분석
+Node.js/npm	일부 도구 설치 여부 확인 또는 보조 용도
+Terminal / PowerShell	설치 상태 확인과 폴더 생성
+
+Node.js/npm은 이 과정의 핵심 실습이 아니라 설치 환경 확인 또는 도구 설치 보조 용도로만 다룹니다.
+
+8. 단계별 실습 절차
+Step 1. Notion 제출용 하부 페이지 만들기
+
+강의자 Notion의 실습 제출 페이지에서 오늘 제출용 하부 페이지를 만듭니다.
+
+하부 페이지 이름은 아래 형식을 사용합니다.
+
+05차시_학번_이름_환경설치인증
+
+예시입니다.
+
+05차시_20260001_김미나_환경설치인증
+
+Notion 하부 페이지에는 아래 구조를 만듭니다.
+
+개발 및 협업 환경 설치 인증
+
+기본 정보
+
+1. 내 운영체제
+2. GitHub 로그인 확인
+3. Git 설치 확인
+4. VS Code 설치 확인
+5. Python 설치 확인
+6. Node.js/npm 설치 여부 확인
+7. 로컬 실습 폴더 생성 확인
+8. GitHub 저장소 생성 또는 준비 상태
+9. 오류 해결 로그
+10. 다음 차시 준비 상태
+Step 2. 내 운영체제 확인하기
+
+본인의 운영체제를 확인하고 Notion에 기록합니다.
+
+운영체제	사용할 터미널
+Windows	PowerShell 또는 VS Code Terminal
+macOS	Terminal 또는 VS Code Terminal
+Linux	Terminal 또는 VS Code Terminal
+
+Notion에 아래처럼 작성합니다.
+
+내 운영체제:
+Windows / macOS / Linux 중 선택
+
+사용한 터미널:
+PowerShell / Terminal / VS Code Terminal 중 선택
+Step 3. GitHub 로그인 확인하기
+
+웹 브라우저에서 GitHub에 로그인합니다.
+
+확인할 내용은 아래와 같습니다.
+
+GitHub 로그인 상태:
+로그인 완료 / 로그인 실패 / 계정 없음 / 비밀번호 재설정 필요
+
+GitHub 저장소를 아직 만들지 않은 학생은 오늘 저장소를 준비합니다. 저장소 이름은 아래를 권장합니다.
+
+AWS-DCO-GenAI-Portfolio
+
+GitHub 공식 문서에서는 오른쪽 위의 추가 메뉴에서 New repository를 선택하고, 저장소 이름과 공개 범위를 선택한 뒤 Create repository를 누르는 흐름으로 새 저장소를 만들 수 있다고 안내합니다.
+
+오늘 GitHub 저장소 생성은 준비 단계입니다.
+실습 산출물의 GitHub 업로드는 Git/GitHub 흐름을 정리한 뒤 7차시 이후부터 본격적으로 병행합니다.
+
+Step 4. Git 설치 확인하기
+
+터미널을 열고 아래 명령어를 실행합니다.
+
+Windows PowerShell / macOS Terminal / Linux Terminal 공통
+git --version
+
+정상 예시는 아래와 비슷합니다.
+
+git version 2.xx.x
+
+Git이 설치되어 있지 않으면 아래 방식 중 본인 운영체제에 맞는 방법으로 설치합니다.
+
+운영체제	설치 방법
+Windows	Git 공식 Windows 설치 페이지에서 설치 파일을 받거나, 가능한 경우 winget install --id Git.Git -e --source winget 사용
+macOS	Homebrew가 있으면 brew install git, 또는 xcode-select --install 사용
+Linux	배포판 패키지 관리자 사용. 예: Ubuntu/Debian 계열은 sudo apt install git
+
+Git 공식 설치 페이지는 Windows용 최신 설치 파일과 winget 설치 명령을 안내하고 있습니다. macOS의 경우 Git 공식 문서에서 Homebrew 설치 방식과 Xcode Command Line Tools의 xcode-select --install 방식을 안내합니다. Linux는 배포판 패키지 관리자를 사용하는 방식이 가장 쉽고, Debian/Ubuntu 계열은 apt-get install git, Fedora 계열은 dnf install git 방식이 안내되어 있습니다.
+
+설치 후 터미널을 새로 열고 다시 확인합니다.
+
+git --version
+Step 5. VS Code 설치 확인하기
+
+터미널에서 아래 명령어를 실행합니다.
+
+code --version
+
+정상적으로 설치되어 있으면 버전 정보가 표시됩니다.
+
+code 명령어가 안 되더라도 VS Code 앱이 실행되면 일단 설치 확인으로 인정할 수 있습니다.
+
+Windows에서 설치가 필요한 경우
+공식 VS Code 다운로드 페이지에서 Windows User setup을 다운로드합니다.
+설치 파일을 실행합니다.
+설치 후 PowerShell을 닫았다가 다시 엽니다.
+아래 명령어를 실행합니다.
+code --version
+
+Windows User setup은 관리자 권한이 필요하지 않아 대부분의 개인 계정 설치에 적합하고, 설치 후 콘솔을 다시 열면 code .로 폴더를 열 수 있습니다.
+
+macOS에서 설치가 필요한 경우
+공식 VS Code 다운로드 페이지에서 macOS용 .dmg 파일을 다운로드합니다.
+.dmg 파일을 열고 Visual Studio Code.app을 Applications 폴더로 이동합니다.
+VS Code를 실행합니다.
+터미널에서 code 명령을 쓰려면 VS Code에서 Cmd + Shift + P를 누른 뒤 Shell Command: Install 'code' command in PATH를 실행합니다.
+Terminal을 새로 열고 아래 명령어를 실행합니다.
+code --version
+
+macOS 공식 설정 안내에서도 VS Code를 Applications 폴더로 옮기고, Command Palette에서 Shell Command: Install 'code' command in PATH를 실행한 뒤 터미널을 다시 열면 code .를 사용할 수 있다고 설명합니다.
+
+Linux에서 설치가 필요한 경우
+공식 VS Code 다운로드 페이지에서 배포판에 맞는 .deb 또는 .rpm 파일을 다운로드합니다.
+Ubuntu/Debian 계열은 .deb, Fedora/Red Hat 계열은 .rpm을 사용합니다.
+설치 후 아래 명령어로 확인합니다.
+code --version
+
+VS Code 공식 다운로드 페이지에서는 macOS, Windows, Linux .deb, Linux .rpm 다운로드를 제공합니다.
+
+Step 6. Python 설치 확인하기
+
+터미널에서 아래 명령어 중 하나를 실행합니다.
+
+Windows PowerShell
+python --version
+
+안 되면 아래 명령어도 시도합니다.
+
+py --version
+macOS / Linux Terminal
+python3 --version
+
+또는 환경에 따라 아래 명령어를 사용할 수 있습니다.
+
+python --version
+
+정상 예시는 아래와 비슷합니다.
+
+Python 3.x.x
+
+Python 공식 다운로드 페이지에서는 Windows용 Python Install Manager와 macOS용 최신 Python 다운로드를 제공합니다. Windows에서는 Python Install Manager 설치 후 python 명령을 터미널에서 사용할 수 있고, 문제가 있으면 py 명령을 함께 확인할 수 있습니다.
+
+Step 7. Node.js/npm 설치 여부 확인하기
+
+Node.js/npm은 오늘의 핵심 실습 도구는 아닙니다.
+다만 6차시 이후 일부 도구 설치 확인에 필요할 수 있으므로 설치 여부만 확인합니다.
+
+아래 명령어를 실행합니다.
+
+node --version
+npm --version
+
+정상 예시는 아래와 비슷합니다.
+
+vxx.x.x
+x.x.x
+
+Node.js와 npm이 설치되어 있지 않아도 오늘 기본 과제는 완료할 수 있습니다.
+npm 공식 문서에서도 Node.js와 npm 설치 여부를 확인할 때 node -v, npm -v 명령을 사용할 수 있다고 안내합니다.
+
+Step 8. 로컬 실습 폴더 만들기
+
+이제 앞으로 사용할 로컬 포트폴리오 폴더를 만듭니다.
+
+최종 GitHub 포트폴리오 구조는 나중에 아래 형태로 정리합니다.
+
+AWS-DCO-GenAI-Portfolio/
+├─ README.md
+├─ 01_dco_glossary/
+├─ 02_dco_profile/
+├─ 03_sop_analysis/
+├─ 04_environment_setup/
+├─ 05_antigravity_cli/
+├─ 06_cli_file_automation/
+├─ 07_log_analysis_script/
+├─ 08_incident_analysis/
+├─ 09_incident_report/
+├─ 10_stitch_dco_dashboard/
+└─ 11_exam_prep/
+
+5차시에서는 우선 04_environment_setup 폴더와 install_check.md 파일을 만듭니다.
+
+Windows PowerShell
+cd $HOME\Documents
+New-Item -ItemType Directory -Force -Path .\AWS-DCO-GenAI-Portfolio\04_environment_setup
+New-Item -ItemType File -Force -Path .\AWS-DCO-GenAI-Portfolio\04_environment_setup\install_check.md
+
+생성 확인:
+
+tree .\AWS-DCO-GenAI-Portfolio /F
+
+VS Code로 열기:
+
+code .\AWS-DCO-GenAI-Portfolio
+macOS / Linux Terminal
+cd ~/Documents
+mkdir -p AWS-DCO-GenAI-Portfolio/04_environment_setup
+touch AWS-DCO-GenAI-Portfolio/04_environment_setup/install_check.md
+
+생성 확인:
+
+find AWS-DCO-GenAI-Portfolio -maxdepth 3 -print
+
+VS Code로 열기:
+
+code AWS-DCO-GenAI-Portfolio
+Step 9. install_check.md 파일에 설치 확인 결과 작성하기
+
+install_check.md 파일 또는 Notion 하부 페이지에 아래 내용을 작성합니다.
+
+도구별 설치 상태:
+Notion 접속:
+GitHub 로그인:
+Git:
+VS Code:
+Python:
+Node.js:
+npm:
+로컬 실습 폴더:
+GitHub 저장소:
+
+각 항목은 아래 중 하나로 표시합니다.
+
+설치 완료
+이미 설치되어 있었음
+명령어 확인 완료
+설치 중 오류 발생
+아직 설치하지 못함
+계정 로그인 오류
+5차시 이후 추가 확인 필요
+Step 10. 오류 해결 로그 작성하기
+
+설치나 실행 중 오류가 발생한 학생은 아래 형식으로 Notion에 기록합니다.
+
+오류 발생 도구:
+예: Git / VS Code / Python / Node.js / npm / GitHub
+
+오류가 발생한 명령어:
+예: git --version
+
+오류 화면 내용:
+예: 'git' is not recognized as the name of a cmdlet
+
+내가 시도한 해결 방법:
+예: PowerShell을 다시 열어 보았습니다.
+예: 공식 다운로드 페이지에서 설치 파일을 다시 받았습니다.
+예: VS Code를 직접 실행해 보았습니다.
+
+현재 상태:
+해결 완료 / 아직 미해결 / 다음 차시에서 이어서 확인 필요
+
+캡처 첨부:
+오류 화면 캡처 첨부 여부: 있음 / 없음
+9. 복사해서 사용할 수 있는 AI 프롬프트
+
+오늘은 AI에게 계정정보나 비밀번호를 입력하지 않습니다.
+오류 메시지를 넣을 때도 사용자 이름, 이메일, 토큰, 경로에 포함된 개인정보는 가리고 입력합니다.
+
+프롬프트 1. 설치 오류 원인을 쉽게 설명받기
+역할:
+당신은 컴퓨터 실습 초보자를 돕는 설치 오류 해결 도우미입니다.
+
+목표:
+아래 오류 메시지를 비전공자도 이해할 수 있게 설명하고, 안전한 해결 순서를 알려 주세요.
+
+상황:
+저는 AWS DCO 인턴십 직무 이해를 위한 생성형 AI 활용 수업에서 로컬 실습환경을 준비하고 있습니다.
+실제 서버, 실제 네트워크, 실제 AWS 환경에는 접속하지 않습니다.
+
+도구:
+[Git / VS Code / Python / Node.js / npm 중 하나 입력]
+
+운영체제:
+[Windows / macOS / Linux 중 하나 입력]
+
+실행한 명령어:
+[예: git --version]
+
+오류 메시지:
+[여기에 개인정보와 계정정보를 제거한 오류 메시지 붙여넣기]
+
+출력 형식:
+1. 오류가 의미하는 쉬운 설명
+2. 가능한 원인
+3. 먼저 확인할 것
+4. 해결 순서
+5. 그래도 안 될 때 Notion 오류 해결 로그에 적을 내용
+
+제한 조건:
+1. 실제 계정정보, 비밀번호, 토큰, API 키를 요구하지 마세요.
+2. 관리자 권한이 필요한 조치는 조심스럽게 안내해 주세요.
+3. 실제 서버나 실제 네트워크 접속을 요구하지 마세요.
+4. 수업용 로컬 실습환경 준비 관점으로만 설명해 주세요.
+프롬프트 2. 설치 확인 결과를 Notion 제출용으로 정리하기
+역할:
+당신은 학생의 실습 인증자료를 정리해 주는 문서화 도우미입니다.
+
+목표:
+아래 설치 확인 결과를 Notion 제출 페이지에 붙여넣기 좋은 형태로 정리해 주세요.
+
+입력:
+- 운영체제:
+- GitHub 로그인 상태:
+- git --version 결과:
+- code --version 결과:
+- python 또는 python3 또는 py --version 결과:
+- node --version 결과:
+- npm --version 결과:
+- 로컬 폴더 생성 여부:
+- GitHub 저장소 준비 여부:
+- 오류가 있었던 도구:
+- 내가 시도한 해결 방법:
+
+출력 형식:
+1. 기본 정보
+2. 도구별 설치 확인 결과
+3. 오류 해결 로그
+4. 다음 차시 준비 상태
+5. 보안 확인 메모
+
+제한 조건:
+1. 실제 계정정보, 비밀번호, 토큰, API 키는 포함하지 마세요.
+2. 개인정보가 있으면 [가림]으로 표시해 주세요.
+3. 수업용 설치 인증자료처럼 간단하고 명확하게 작성해 주세요.
+프롬프트 3. 지필시험 대비용으로 요약하기
+아래 설치 확인 실습 내용을 지필시험 대비용으로 요약해 주세요.
+
+조건:
+1. Git, GitHub, VS Code, Python, Node.js/npm의 역할을 한 문장씩 설명해 주세요.
+2. 각 도구의 설치 확인 명령어를 정리해 주세요.
+3. 설치 오류가 났을 때 기록해야 할 항목을 정리해 주세요.
+4. 실제 계정정보, 비밀번호, 토큰, API 키를 입력하면 안 되는 이유를 설명해 주세요.
+
+입력:
+[여기에 내가 작성한 설치 확인 메모 붙여넣기]
+10. 복사해서 사용할 수 있는 명령어
+전체 확인 명령어
+Windows PowerShell
+git --version
+code --version
+python --version
+py --version
+node --version
+npm --version
+macOS / Linux Terminal
+git --version
+code --version
+python3 --version
+python --version
+node --version
+npm --version
+Git 사용자 정보 확인 및 설정
+
+GitHub 업로드 전에는 Git 사용자 이름과 이메일을 확인할 수 있습니다.
+이 이메일은 GitHub 계정 이메일과 다를 수 있으며, 공개 노출이 걱정되면 GitHub의 noreply 이메일 사용을 강의자 안내에 따라 선택합니다.
+
+확인
+git config --global user.name
+git config --global user.email
+설정 예시
+
+아래 예시는 본인 이름과 이메일로 바꾸어 입력합니다.
+
+git config --global user.name "본인이름"
+git config --global user.email "본인이메일@example.com"
+
+Notion 제출 페이지에는 이메일 전체를 적지 않아도 됩니다. 필요하면 [이메일 가림]으로 표시합니다.
+
+로컬 폴더 생성 명령어
+Windows PowerShell
+cd $HOME\Documents
+New-Item -ItemType Directory -Force -Path .\AWS-DCO-GenAI-Portfolio\04_environment_setup
+New-Item -ItemType File -Force -Path .\AWS-DCO-GenAI-Portfolio\04_environment_setup\install_check.md
+macOS / Linux Terminal
+cd ~/Documents
+mkdir -p AWS-DCO-GenAI-Portfolio/04_environment_setup
+touch AWS-DCO-GenAI-Portfolio/04_environment_setup/install_check.md
+zip 백업 만들기
+Windows PowerShell
+cd $HOME\Documents
+Compress-Archive -Path .\AWS-DCO-GenAI-Portfolio -DestinationPath .\학번_이름_05차시_환경설치인증.zip -Force
+macOS / Linux Terminal
+cd ~/Documents
+zip -r 학번_이름_05차시_환경설치인증.zip AWS-DCO-GenAI-Portfolio
+선택: GitHub 저장소 준비 후 로컬 Git 초기화
+
+아래는 전공자 또는 빠르게 끝낸 학생용입니다.
+기본 과제에서는 명령어 확인과 Notion 인증자료 제출이 우선입니다.
+
+cd ~/Documents/AWS-DCO-GenAI-Portfolio
+git init
+git status
+
+Windows PowerShell에서는 경로를 아래처럼 이동합니다.
+
+cd $HOME\Documents\AWS-DCO-GenAI-Portfolio
+git init
+git status
+11. 샘플 파일 내용
+
+아래 내용은 04_environment_setup/install_check.md 파일에 넣을 수 있는 Markdown 템플릿입니다.
+Notion에는 코드블록 전체를 그대로 붙여넣기보다 제목과 일반 텍스트 블록으로 나누어 작성해도 됩니다.
+
+# 개발 및 협업 환경 설치 인증
+
+- 과정명: AWS DCO 인턴십 직무 이해를 위한 생성형 AI 활용 및 포트폴리오 제작 과정
+- 차시: 5차시
+- 작성자:
+- 학번:
+- 작성일:
+- 제출 위치: 강의자 Notion 제출 페이지 하부 페이지
+- 사용 데이터: 교육용 샘플 데이터 사용
+- 주의: 이 문서는 로컬 실습환경 준비 상태를 기록한 학습용 인증자료입니다.
+
+---
+
+## 1. 내 실습 환경
+
+운영체제:
+
+사용한 터미널:
+
+노트북 종류 또는 환경 메모:
+
+---
+
+## 2. 도구별 설치 확인 결과
+
+### Notion
+
+접속 상태:
+
+제출용 하부 페이지 생성 여부:
+
+### GitHub
+
+로그인 상태:
+
+GitHub 저장소 준비 여부:
+
+저장소 이름:
+
+### Git
+
+실행한 명령어:
+
+결과:
+
+화면 캡처 첨부 여부:
+
+### VS Code
+
+실행한 명령어:
+
+결과:
+
+VS Code 직접 실행 여부:
+
+화면 캡처 첨부 여부:
+
+### Python
+
+실행한 명령어:
+
+결과:
+
+화면 캡처 첨부 여부:
+
+### Node.js
+
+실행한 명령어:
+
+결과:
+
+필요 시 추가 확인 여부:
+
+### npm
+
+실행한 명령어:
+
+결과:
+
+필요 시 추가 확인 여부:
+
+---
+
+## 3. 로컬 실습 폴더 생성 확인
+
+생성한 폴더:
+
+```text
+AWS-DCO-GenAI-Portfolio/
+└─ 04_environment_setup/
+   └─ install_check.md
+
+생성 확인 명령어:
+
+결과:
+
+4. 오류 해결 로그
+
+오류 발생 도구:
+
+오류가 발생한 명령어:
+
+오류 메시지:
+
+내가 시도한 해결 방법:
+
+현재 상태:
+
+다음 차시에서 이어서 확인할 내용:
+
+5. 보안 확인 메모
+
+아래 정보는 Notion이나 AI 도구에 입력하지 않았습니다.
+
+계정 비밀번호
+인증 코드
+API 키
+토큰
+개인 이메일 전체
+실제 고객정보
+실제 장비정보
+실제 네트워크 정보
+6. 다음 차시 준비 상태
+
+6차시 Antigravity CLI 설치 준비 상태:
+
+아직 필요한 도움:
+
+
+---
+
+## Notion 제출용 템플릿
+
+```text
+개발 및 협업 환경 설치 인증
+
+기본 정보
+
+과정명: AWS DCO 인턴십 직무 이해를 위한 생성형 AI 활용 및 포트폴리오 제작 과정
+차시: 5차시
+작성자:
+학번:
+작성일:
+사용 데이터: 교육용 샘플 데이터 사용
+
+1. 내 실습 환경
+
+운영체제:
+사용한 터미널:
+노트북 환경 메모:
+
+2. 도구별 설치 확인 결과
+
+Notion 접속:
+GitHub 로그인:
+Git 설치 확인:
+VS Code 설치 확인:
+Python 설치 확인:
+Node.js 설치 여부:
+npm 설치 여부:
+로컬 실습 폴더 생성:
+GitHub 저장소 준비:
+
+3. 실행한 명령어와 결과
+
+git --version 결과:
+code --version 결과:
+python / python3 / py --version 결과:
+node --version 결과:
+npm --version 결과:
+
+4. 오류 해결 로그
+
+오류 발생 도구:
+오류 메시지:
+내가 시도한 해결 방법:
+현재 상태:
+캡처 첨부 여부:
+
+5. 보안 확인 메모
+
+비밀번호, 인증 코드, 토큰, API 키를 입력하지 않았습니다.
+실제 AWS 내부정보, 실제 장비정보, 실제 네트워크 정보는 사용하지 않았습니다.
+
+6. 다음 차시 준비 상태
+
+6차시 Antigravity CLI 설치 준비 상태:
+도움이 필요한 부분:
+12. 예상 결과 화면 또는 결과 파일
+Notion 제출 결과 예시
+강의자 Notion 수업 페이지/
+└─ 01_실습제출/
+   └─ 05차시_학번_이름_환경설치인증
+
+Notion 하부 페이지 안에는 아래 내용이 포함되어야 합니다.
+
+항목	포함 여부
+기본 정보	포함
+운영체제와 사용 터미널	포함
+GitHub 로그인 상태	포함
+Git 설치 확인 결과	포함
+VS Code 설치 확인 결과	포함
+Python 설치 확인 결과	포함
+Node.js/npm 설치 여부	포함
+로컬 실습 폴더 생성 결과	포함
+GitHub 저장소 준비 상태	포함
+오류 해결 로그	오류가 있을 경우 포함
+화면 캡처	가능하면 포함
+로컬 백업 파일 결과 예시
+AWS-DCO-GenAI-Portfolio/
+└─ 04_environment_setup/
+   └─ install_check.md
+13. 자주 발생하는 오류와 해결 방법
+오류 상황	원인	해결 방법
+git 명령어가 인식되지 않습니다.	Git이 설치되지 않았거나 PATH가 반영되지 않았을 수 있습니다.	Git 설치 후 터미널을 닫았다가 다시 열고 git --version을 실행합니다.
+Git 설치 파일을 어디서 받아야 할지 모르겠습니다.	검색 결과에 광고나 비공식 사이트가 섞일 수 있습니다.	Git 공식 설치 페이지 또는 강의자 Notion에 제공된 공식 링크를 사용합니다.
+code 명령어가 실행되지 않습니다.	VS Code가 PATH에 등록되지 않았거나 터미널을 설치 전에 열어 둔 경우입니다.	VS Code를 직접 실행해 보고, Windows는 터미널을 다시 열고, macOS는 Command Palette에서 Shell Command: Install 'code' command in PATH를 실행합니다.
+VS Code와 Visual Studio가 헷갈립니다.	이름이 비슷하지만 다른 도구입니다.	이 과정에서는 Visual Studio Code, 즉 VS Code를 사용합니다.
+python --version이 안 됩니다.	Python이 설치되지 않았거나 명령어 이름이 다를 수 있습니다.	Windows는 py --version, macOS/Linux는 python3 --version도 시도합니다.
+Python 설치 후에도 명령어가 안 됩니다.	PATH 설정이 반영되지 않았을 수 있습니다.	터미널을 다시 열고, 그래도 안 되면 오류 화면을 캡처해 Notion에 기록합니다.
+node 또는 npm 명령어가 안 됩니다.	Node.js/npm이 설치되지 않았을 수 있습니다.	오늘은 필수 완료가 아니므로 “미설치 / 추가 확인 필요”로 기록합니다.
+GitHub 로그인이 안 됩니다.	비밀번호 오류, 2단계 인증, 계정 미생성 등이 원인일 수 있습니다.	비밀번호나 인증 코드를 Notion에 적지 말고, 상태만 기록합니다.
+GitHub 저장소 생성이 어렵습니다.	GitHub 화면이 낯설거나 계정 권한 문제가 있을 수 있습니다.	저장소 생성은 “준비 중”으로 기록하고, 화면 캡처 또는 질문 내용을 Notion에 남깁니다.
+명령어를 어디에 입력해야 할지 모르겠습니다.	터미널 사용이 익숙하지 않을 수 있습니다.	Windows는 PowerShell, macOS는 Terminal을 사용합니다. VS Code가 열리면 VS Code Terminal을 사용해도 됩니다.
+설치가 50분 안에 끝나지 않습니다.	네트워크 속도, 권한 문제, PC 환경 차이 때문입니다.	완료하지 못한 상태를 Notion에 기록하고, 오류 화면과 시도한 해결 방법을 제출합니다.
+화면 캡처 방법을 모르겠습니다.	운영체제별 캡처 단축키가 다릅니다.	Windows는 Win + Shift + S, macOS는 Cmd + Shift + 4를 사용합니다.
+14. 제출해야 할 산출물
+
+오늘 제출해야 할 기본 산출물은 Notion 하부 페이지입니다.
+
+제출 항목	필수 여부	설명
+Notion 하부 페이지	필수	05차시_학번_이름_환경설치인증
+운영체제와 사용 터미널	필수	Windows / macOS / Linux, PowerShell / Terminal
+GitHub 로그인 상태	필수	로그인 완료 또는 오류 상태
+Git 설치 확인	필수	git --version 결과 또는 오류 로그
+VS Code 설치 확인	필수	code --version 결과 또는 VS Code 실행 화면
+Python 설치 확인	필수	python --version, python3 --version, py --version 중 가능한 결과
+Node.js/npm 설치 여부	권장	설치 여부만 확인. 미설치도 기록 가능
+로컬 실습 폴더 생성 결과	필수	AWS-DCO-GenAI-Portfolio/04_environment_setup/install_check.md
+GitHub 저장소 준비 상태	권장	저장소 생성 완료 또는 준비 중
+오류 해결 로그	오류 발생 시 필수	오류 메시지, 시도한 해결 방법, 현재 상태
+화면 캡처	권장	설치 확인 화면 또는 오류 화면
+
+5~6차시는 설치 인증과 오류 해결 로그를 Notion 하부 페이지로 제출하도록 운영합니다.
+
+15. Notion 제출 위치와 하부 페이지 작성 방법
+제출 위치
+강의자 Notion 수업 페이지
+└─ 01_실습제출
+하부 페이지 이름
+05차시_학번_이름_환경설치인증
+
+예시:
+
+05차시_20260001_김미나_환경설치인증
+Notion 하부 페이지 작성 순서
+개발 및 협업 환경 설치 인증
+
+기본 정보
+
+1. 내 실습 환경
+2. GitHub 로그인 확인
+3. Git 설치 확인
+4. VS Code 설치 확인
+5. Python 설치 확인
+6. Node.js/npm 설치 여부 확인
+7. 로컬 실습 폴더 생성 확인
+8. GitHub 저장소 생성 또는 준비 상태
+9. 오류 해결 로그
+10. 다음 차시 준비 상태
+11. 제출 전 체크리스트
+Notion 작성 팁
+작업	Notion에서 사용하는 방법
+큰 제목	/heading 1
+중간 제목	/heading 2
+체크리스트	/to-do list
+명령어 기록	/code
+화면 캡처 첨부	이미지 드래그 앤 드롭
+오류 로그 정리	일반 텍스트 또는 토글 블록
+파일 첨부	/file 또는 드래그 앤 드롭
+16. GitHub 업로드 위치 또는 GitHub 병행 제출 시점
+
+5차시는 Git/GitHub 실습 준비 차시입니다.
+오늘은 GitHub 저장소를 생성하거나 준비 상태를 확인합니다.
+
+나중에 Git/GitHub 실습이 완료되면 오늘 만든 내용을 아래 위치에 정리합니다.
+
+AWS-DCO-GenAI-Portfolio/
+└─ 04_environment_setup/
+   └─ install_check.md
+시점	제출 방식
+5차시 현재	Notion 하부 페이지에 설치 인증자료 제출
+저장소 생성 가능 학생	GitHub 저장소 AWS-DCO-GenAI-Portfolio 생성 또는 준비
+Git/GitHub 실습 완료 이후	GitHub 업로드 + Notion 하부 페이지에 GitHub 링크 추가
+GitHub 업로드 어려움	Notion에 파일 첨부, 화면 캡처, zip 파일로 대체 제출
+17. 로컬 파일 백업 또는 zip 대체 제출 방법
+로컬 백업 파일명
+install_check.md
+권장 저장 위치
+Documents/AWS-DCO-GenAI-Portfolio/04_environment_setup/install_check.md
+zip 대체 제출 파일명
+학번_이름_05차시_환경설치인증.zip
+Windows PowerShell zip 만들기
+cd $HOME\Documents
+Compress-Archive -Path .\AWS-DCO-GenAI-Portfolio -DestinationPath .\학번_이름_05차시_환경설치인증.zip -Force
+macOS/Linux Terminal zip 만들기
+cd ~/Documents
+zip -r 학번_이름_05차시_환경설치인증.zip AWS-DCO-GenAI-Portfolio
+대체 제출이 필요한 경우
+상황	대체 제출 방법
+Notion 접속 오류	오류 화면 캡처 + 로컬 install_check.md 저장
+GitHub 로그인 오류	로그인 오류 상태를 Notion에 기록
+Git 설치 실패	오류 화면 캡처 + 오류 해결 로그 작성
+VS Code 설치 실패	앱 실행 실패 화면 또는 설치 오류 화면 첨부
+Python 설치 실패	실행한 명령어와 오류 메시지 기록
+Node.js/npm 미설치	“미설치 / 추후 확인”으로 기록
+모든 설치가 지연됨	가능한 항목만 제출하고, 미완료 항목을 오류 해결 로그에 기록
+18. 기본 과제
+
+아래 항목을 완료합니다.
+
+번호	기본 과제
+1	강의자 Notion 제출 페이지에 접속합니다.
+2	05차시_학번_이름_환경설치인증 하부 페이지를 만듭니다.
+3	내 운영체제와 사용 터미널을 기록합니다.
+4	GitHub 로그인 상태를 기록합니다.
+5	git --version 결과를 확인하고 기록합니다.
+6	code --version 또는 VS Code 실행 화면을 확인하고 기록합니다.
+7	python --version, python3 --version, py --version 중 가능한 명령 결과를 기록합니다.
+8	node --version, npm --version 결과 또는 미설치 상태를 기록합니다.
+9	AWS-DCO-GenAI-Portfolio/04_environment_setup/install_check.md 파일을 만듭니다.
+10	GitHub 저장소 AWS-DCO-GenAI-Portfolio 생성 또는 준비 상태를 기록합니다.
+11	오류가 발생한 경우 오류 화면과 해결 로그를 작성합니다.
+12	“교육용 샘플 데이터 사용” 문구를 포함합니다.
+19. 심화 과제
+
+빠르게 끝낸 학생 또는 전공자는 아래 중 1개 이상을 선택합니다.
+
+번호	심화 과제
+1	git config --global user.name, git config --global user.email을 확인하고 필요한 경우 설정합니다.
+2	로컬 폴더에서 git init과 git status를 실행합니다.
+3	GitHub 저장소를 만들고 저장소 설명에 “DCO 직무 이해 학습형 포트폴리오”라고 작성합니다.
+4	README.md 초안을 만듭니다.
+5	install_check.md에 도구별 설치 확인 결과를 더 자세히 정리합니다.
+6	VS Code에서 04_environment_setup/install_check.md 파일을 열고 수정해 봅니다.
+심화 과제 예시 명령어
+cd ~/Documents/AWS-DCO-GenAI-Portfolio
+git init
+git status
+
+Windows PowerShell:
+
+cd $HOME\Documents\AWS-DCO-GenAI-Portfolio
+git init
+git status
+
+git init은 로컬 폴더를 Git으로 관리할 준비를 하는 명령입니다.
+아직 GitHub에 업로드하지 않아도 됩니다.
+
+20. 지필시험 연결 포인트
+
+14차시 최종 평가는 실습 실행이 아니라 지필시험입니다. 시험 중에는 AI 도구, GitHub, Notion을 사용하지 않습니다. 시험은 도구 실행 능력보다 생성형 AI 활용 원리, DCO 직무 상황 적용, 보안수칙, 프롬프트 작성 능력을 확인합니다.
+
+20-1. 오늘 실습에서 시험에 나올 수 있는 핵심 용어
+핵심 용어	손으로 쓸 수 있어야 하는 설명
+로컬 환경	개인 노트북 안에서 실습 파일을 만들고 실행하는 환경
+Terminal	명령어를 입력해 프로그램 실행과 파일 작업을 하는 창
+PowerShell	Windows에서 사용하는 대표적인 명령어 실행 도구
+Git	파일 변경 이력을 관리하는 버전관리 도구
+GitHub	Git으로 관리한 파일을 온라인 저장소에 정리하는 서비스
+Repository	프로젝트 파일과 변경 이력을 저장하는 공간
+VS Code	로컬 파일을 편집하고 터미널과 Python 실행을 함께 사용할 수 있는 코드 편집기
+Python	교육용 샘플 로그 분석 스크립트 작성에 사용할 프로그래밍 언어
+Node.js/npm	일부 개발 도구 설치나 실행에 사용될 수 있는 보조 환경
+오류 해결 로그	오류 메시지, 시도한 해결 방법, 현재 상태를 기록한 문서
+20-2. 손으로 작성할 수 있어야 하는 프롬프트 구조
+
+
+점검 항목	체크
+강의자 Notion 제출 페이지에 접속했습니다.	□
+05차시_학번_이름_환경설치인증 하부 페이지를 만들었습니다.	□
+내 운영체제와 사용 터미널을 기록했습니다.	□
+GitHub 로그인 상태를 기록했습니다.	□
+git --version 결과 또는 오류 로그를 기록했습니다.	□
+code --version 결과 또는 VS Code 실행 화면을 기록했습니다.	□
+python --version, python3 --version, py --version 중 가능한 결과를 기록했습니다.	□
+node --version, npm --version 결과 또는 미설치 상태를 기록했습니다.	□
+로컬 폴더 AWS-DCO-GenAI-Portfolio/04_environment_setup를 만들었습니다.	□
+install_check.md 파일을 만들었습니다.	□
+GitHub 저장소 생성 또는 준비 상태를 기록했습니다.	□
+오류가 발생한 경우 오류 화면과 해결 로그를 작성했습니다.	□
+비밀번호, 인증 코드, 토큰, API 키를 Notion이나 AI에 입력하지 않았습니다.	□
+오늘 만든 설치 인증자료가 나중에 GitHub 포트폴리오의 04_environment_setup/install_check.md와 연결된다는 것을 이해했습니다.	□
+6차시에서 Antigravity CLI 설치와 agy --version, agy 실행을 확인한다는 것을 이해했습니다.	□
